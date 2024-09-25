@@ -1,4 +1,3 @@
-import * as rs from "readline-sync";
 
 /*
 Estructuras de Datos – Arreglos
