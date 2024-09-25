@@ -20,6 +20,7 @@ console.log("---------------------");
 
 let cantNombre: number = rs.questionInt("ingrese la cantidad de nombres a guardar: ");
 let nombres:string[] = new Array(cantNombre);
+
 function mostrarNombres (listaNombres:string[]):void{
     console.log("\nNombres ingresados");
     console.log("------------------");
