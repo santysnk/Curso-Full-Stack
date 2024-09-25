@@ -14,23 +14,23 @@ el usuario y llenarlo con nombres de personas
 
 */
 
-console.clear()
+console.clear();
 console.log(" NOMBRES DESEADOS");
 console.log("---------------------");
 
-let cantNombre: number = rs.questionInt("ingrese la cantidad de nombres a guardar: ")
+let cantNombre: number = rs.questionInt("ingrese la cantidad de nombres a guardar: ");
 let nombres:string[] = new Array(cantNombre);
 function mostrarNombres (listaNombres:string[]):void{
     console.log("\nNombres ingresados");
     console.log("------------------");
     for (let i :number = 0; i < listaNombres.length;i++){
-        console.log(`El nombre ${i + 1} es: ${listaNombres[i]}`)
+        console.log(`El nombre ${i + 1} es: ${listaNombres[i]}`);
     }
 
 }
 
 for (let i :number = 0; i < cantNombre;i++){
-    nombres[i] = rs.question(`Ingrese el nombre ${i + 1} de ${cantNombre}: `)
+    nombres[i] = rs.question(`Ingrese el nombre ${i + 1} de ${cantNombre}: `);
 }
 
 mostrarNombres(nombres);
