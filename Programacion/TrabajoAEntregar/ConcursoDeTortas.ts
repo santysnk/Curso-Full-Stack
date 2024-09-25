@@ -21,7 +21,7 @@ y usa la función calcularPuntaje para determinar la torta con el mayor puntaje.
 *Si lo consideran necesario, pueden implementar funciones extra.
 */
 
-console.clear()
+console.clear();
 console.log(" CONCURSO DE TORTAS");
 console.log("---------------------");
 
@@ -29,7 +29,7 @@ const critSabor: string = "Sabor";
 const critPresen: string = "Presentacion";
 const critDifi: string = "Dificultad";
 
-let cantConcursantes: number = rs.questionInt("ingrese la cantidad de participantes: ")
+let cantConcursantes: number = rs.questionInt("ingrese la cantidad de participantes: ");
 let participanteGanador:number=0;
 let puntGanador:number=0;
 let hayEmpate:boolean = false;
@@ -42,15 +42,15 @@ console.log("-------------------------------------------------------------------
 let comprobarPuntaje = (compPuntaje:number,nomCrit:string):number => {
     //Funcion para validar que la nota se encuentre entre 0 y 5
     while(compPuntaje < 0 || compPuntaje > 5){
-        compPuntaje = rs.questionInt(`Ingrese un puntaje valido (entre 0 y 5), para ${nomCrit}: `)
+        compPuntaje = rs.questionInt(`Ingrese un puntaje valido (entre 0 y 5), para ${nomCrit}: `);
     }
     return compPuntaje
 }
 
 let criterio = (nomCrit:string) : number => {
     /*Funcion para asignar por teclado la nota a cada criterio. se crea variable puntaje y se llama a la funcion
-    comprobarPuntaje para comprobar que la nota este entre el rango deseado, tambien se pasa el nombre del criterio 
-    que es una constante, solo para ser mas especifico por consola.*/
+    comprobarPuntaje para comprobar que la nota este entre el rango deseado de (0 a 5), tambien se pasa el nombre del criterio 
+    que es una constante, solo para dar detalle por consola.*/
     let puntaje = comprobarPuntaje(rs.questionInt(`Ingrese puntaje de ${nomCrit}: `),nomCrit);
     return puntaje
 }
@@ -72,7 +72,7 @@ let comprobarGanador = (participante:number,puntajeParticipante:number):void => 
         hayEmpate = false;
     }else if (puntajeParticipante === puntGanador){
         hayEmpate = true;
-        console.log("")
+        console.log("");
     }
 }
 
