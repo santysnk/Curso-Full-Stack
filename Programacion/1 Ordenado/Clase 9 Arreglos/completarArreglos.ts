@@ -34,7 +34,7 @@ function mostrarNumeros (listaNumeros:number[]):void{
 
 function llenarArray(arrayALLenar:number[]){
     for (let i:number =0; i < arrayALLenar.length;i++){
-        arrayALLenar[i] = Azar(100);
+        arrayALLenar[i] = Azar(99);
     }
 }
 
