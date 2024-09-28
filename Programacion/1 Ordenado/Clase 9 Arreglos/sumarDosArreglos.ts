@@ -9,7 +9,7 @@ Sumar Dos Arreglos
 
     • El arreglo tiene dimensión 6 y los números de los dos vectores los carga el usuario.
 */
-
+/*
 console.clear()
 console.log(" Sumar Dos Arreglos");
 console.log("-------------------");
@@ -41,5 +41,16 @@ function sumarArreglos(arreglo1:number[],arreglo2:number[]):void {
 
 llenarArreglos(array1,array1Name);
 llenarArreglos(array2,array2Name);
-sumarArreglos(array1,array2);
+sumarArreglos(array1,array2)*/
+let algo:number[];
+let algo1:number[]=[70,20,65,65,40];
+console.log(algo1[5]);
 
+let algo2:number[]= new Array(10);
+
+let algo3:number[][][]
+
+//let cosas:string[] = ["a","b","c","d"];
+//cosas.push("f");
+
+//console.log(cosas);
