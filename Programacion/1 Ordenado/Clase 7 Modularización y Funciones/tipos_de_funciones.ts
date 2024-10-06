@@ -1,7 +1,7 @@
 /*  FUNCIONES Y TIPOS DE SINTAXIS */
 
 
-// Declaración de Función (Function Declaration)
+// Declaración de Función (Function Declaration), como sentencia
 function nombreDeLaFuncion(): void {
     //codigo que quiero ejecutar
     console.log("Hola!")
@@ -17,9 +17,6 @@ let miFuncion = function(): void {
 let miFuncion2 = () : void => {
     console.log("Hola 3")
 }
-
-
-
 
 nombreDeLaFuncion();
 miFuncion();
