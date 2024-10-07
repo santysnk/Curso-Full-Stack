@@ -1,10 +1,8 @@
 import * as rs from "readline-sync";
 
 /*
-Estructuras de Datos
-Crear arreglo
+Estructuras de Datos : Crear arreglo
     1) Crear un arreglo de letras e imprimirlo.
-
     2) Dado un array con nombres de tamaño 5, pedir al usuario que ingrese un nombre y verificar si está
     en el arreglo. Imprimir el arreglo y si está o no en él.
 */

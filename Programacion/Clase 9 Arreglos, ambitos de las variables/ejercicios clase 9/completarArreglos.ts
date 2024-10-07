@@ -1,15 +1,10 @@
 
 /*
-Estructuras de Datos – Arreglos
+Estructuras de Datos – Arreglos: Ejercicio – Completar Arreglo
 
-Ejercicio – Completar Arreglo
+    • Llenar un array de 10 posiciones con números aleatorios entre 0 y 99
 
-    • Llenar un array de 10 posiciones con números
-    aleatorios entre 0 y 99
-
-    • Para obtener números aleatorios crear una función
-    Azar, que se base en las funciones disponibles en el
-    paquete Math:
+    • Para obtener números aleatorios crear una función Azar, que se base en las funciones disponibles en el paquete Math:
 
     -Math.random() devuelve un nro al azar entre 0 y 1.
 */

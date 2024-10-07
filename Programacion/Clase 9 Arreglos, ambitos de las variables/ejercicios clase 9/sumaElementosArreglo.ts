@@ -1,18 +1,11 @@
 import * as rs from "readline-sync";
 
 /*
-Estructuras de Datos – Arreglos
+Estructuras de Datos – Arreglos: Ejercicio – Suma Elementos Arreglo
 
-Ejercicio – Suma Elementos Arreglo
-
-    • Construya un algoritmo que sume todos los
-    elementos de un arreglo de tamaño N
-
-    • La dimensión del arreglo es ingresada por el
-    usuario
-    • Los elementos (números) del arreglo son
-    ingresados por el usuario
-
+    • Construya un algoritmo que sume todos los elementos de un arreglo de tamaño N
+    • La dimensión del arreglo es ingresada por el usuario
+    • Los elementos (números) del arreglo son ingresados por el usuario
 */
 
 console.clear()
