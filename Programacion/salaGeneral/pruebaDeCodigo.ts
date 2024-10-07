@@ -16,3 +16,9 @@ function recorrerArray(arr1: number[], arr2: string[],longitud1:number, longitud
 recorrerArray(arreglo1, arreglo2,3,2);
 console.log(arreglo1);
 console.log(arreglo2);
+
+
+// Extiende el prototipo de String para agregar el método capitalize
+interface String {
+    capitalize(): string;
+}
