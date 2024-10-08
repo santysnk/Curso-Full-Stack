@@ -10,7 +10,10 @@ import * as rs from "readline-sync";
 let palabra: string = rs.question("Ingrese una clave: ");
 let vocales: RegExp = /[aeiou]/gi;
 let consonantes: RegExp = /[b-df-hj-np-tv-z]/gi;
-/* 
+/*
+EXPLICACION LINEA DE CODIGO 12:
+------------------------------
+
 RegExp significa "Regular Expression" (Expresión Regular), una herramienta utilizada para definir patrones de búsqueda en cadenas de texto.*
 
 Se almacena la expresión regular: /[b-df-hj-np-tv-z]/, mas los modificadores 'g' e 'i', en la variable "consonantes"
