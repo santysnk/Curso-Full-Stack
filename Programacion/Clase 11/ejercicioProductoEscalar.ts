@@ -3,9 +3,7 @@ import { cargarArreglo } from "./funciones";
 import { productoEscalar } from "./funciones";
 /*
 Estructuras de Datos: Producto Escalar
-
     • Cargue dos arreglos de dimensión N números (la cantidad es ingresada por el usuario).
-
     • Calcule el producto escalar entre los dos arreglos.
 */
 

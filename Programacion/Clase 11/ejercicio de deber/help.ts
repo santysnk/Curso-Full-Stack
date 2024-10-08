@@ -1,7 +1,7 @@
 import * as rs from "readline-sync";
 
 // Funcion para cargar con nombres un arreglo
-export function cargarArreglo (arreglo:number[],nombreArreglo:string,long:number):number[]{
+export function cargarArreglo (arreglo:number[],long:number):number[]{
     for (let i:number = 0; i < long;i++){
         console.log(`Ingresos del alumno ${i+1}:`);
         console.log("-----------------------------");

@@ -12,18 +12,17 @@ console.log(" Promedio Escolar");
 console.log("-------------------");
 
 const cantAlumnos: number = rs.questionInt("ingrese la cantidad de alumnos a guardar en los arreglos: ");
-const nombreArreglo:string = "arrayAlumnos";
 
 let arrayAlumnos:number[] = new Array(cantAlumnos);
 console.log("");
-arrayAlumnos = cargarArreglo(arrayAlumnos,nombreArreglo,cantAlumnos);
+arrayAlumnos = cargarArreglo(arrayAlumnos,cantAlumnos);
 
 //console.log(arrayAlumnos);
-let numMenu:number|null = null;
+let numMenu:number = rs.questionInt("ingrese el numero del alumno para ver su promedio (0 para salir): ");
 
 while (numMenu != 0){
     console.log("\nConsulta de Promedio Escolar");
     console.log("----------------------------");
-    numMenu = rs.questionInt("ingrese el numero del alumno para ver su promedio (0 para salir): ");
     console.log(`El promedio del alumno n° ${numMenu}, es: ${arrayAlumnos[numMenu-1]}\n`);
+    numMenu = rs.questionInt("ingrese el numero del alumno para ver su promedio (0 para salir): ");
 }
