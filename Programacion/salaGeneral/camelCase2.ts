@@ -25,11 +25,11 @@ function toCamelCase(texto: string): string {
 let fraseCamelCase:string = toCamelCase(frase);
 console.log(fraseCamelCase);
 
-/*texto.split(' ') divide el texto en un array de palabras, usando los espacios
- como separadores.
+/*texto.split(' ') divide el texto en un array de palabras, usando los espacios como separadores.
+
 Luego, .map() recorre cada palabra en ese array y le aplica la función que defines dentro de 
 .map() (en este caso, una función anónima function(palabra)).
+
 El resultado de esa función para cada palabra se almacena en un nuevo array, 
 que es lo que devuelve .map().
-En resumen, .map() toma cada elemento de un array, 
-ejecuta una función sobre él, y crea un nuevo array con los resultados.*/
+En resumen, .map() toma cada elemento de un array, ejecuta una función sobre él, y crea un nuevo array con los resultados.*/

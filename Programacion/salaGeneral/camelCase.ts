@@ -13,13 +13,24 @@ let frase: string = rs.question("Ingrese alguna frase: ");
 
 // Función para capitalizar la primera letra de cada palabra en un texto
 function capitalizeEachWord(texto: string): string {
-    // 1. Usamos 'split(' ')' para dividir la cadena de texto en un array de palabras, separando por espacios.
-    //    Cada espacio en blanco indica el final de una palabra.
-
-    return texto.split(' ').map(function(palabra) {
-        palabra = palabra.charAt(0).toUpperCase() + palabra.slice(1); return palabra}).join(';'); 
+    return texto.split(' ')
+                .map(function(palabra) {
+                    palabra = palabra.charAt(0).toUpperCase() + palabra.slice(1); 
+                    return palabra
+                    })
+                .join(''); 
 }
-let fraseCamelCase:string=capitalizeEachWord(frase);
-console.log(fraseCamelCase);
+
+frase = capitalizeEachWord(frase);
+
+function toCamelCase(texto: string): string {
+    return texto.charAt(0)
+                .toLowerCase() + texto
+                .slice(1);
+}
+
+frase = toCamelCase(frase);
+
+console.log(frase);
 
 // quiero tomar mate
