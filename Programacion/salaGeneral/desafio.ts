@@ -38,7 +38,7 @@ por que tiene la bandera 'g' al final.
 Cuando hay **varios rangos no consecutivos** de caracteres, estos se definen como /['desde1'-'hasta1''desde2'-'hasta2'...etc]/. 
 Ejemplo (desde la 'a' hasta la 'f' y desde la 'm' hasta la 't', cada uno de ellos):
 
-    /[a-fm-t]/  (esto buscará un solo carácter, que esté en el rango 'a' a 'f' o en el rango 'm' a 't'), solo el primero y sin incluir mayusculas.
+    /[a-fm-t]/  (esto buscará el carácter, que esté en el rango 'a' a 'f' o en el rango 'm' a 't'), solo el primero y sin incluir mayusculas.
 
 Para la expresión regular: /[b-df-hj-np-tv-z]/gi, hay **varios rangos no consecutivos** de caracteres.
 Desglosemos la expresión regular:
@@ -53,15 +53,15 @@ Esta expresión regular coincide con **todas las consonantes** y podrá buscar c
 en todo el string (al usar la bandera 'g' de "global"). Y al usar la bandera `i` de (case-insensitive) tambien contará
 todas las consonantes en **mayúsculas**.
 */
-
-function cambiarConsonantes(palabra: string): string {
-    palabra = palabra.replace(consonantes, function(char){ 
+                                                                 //                              /[abc]/ig    ==>       "f"          
+function cambiarConsonantes(palabra: string): string {          //                                  pepe              pablo          
+    palabra = palabra.replace(consonantes, function(char){     // palabra = palabra.replace(      buscador      ,  rememplazador (encontrado,i,cadena de texto) { econtrado = encontrado + "z"; return econtrado }  );
         if (char === char.toLowerCase()) {
             return char.toUpperCase();
         } else {
             return char.toLowerCase();
         }
-    });
+    }); 
     return palabra;
 }
 
@@ -83,7 +83,6 @@ function cambiarVocales(palabra: string): string {
                 return vocal;
         }
     });
-
     return palabra;
 }
 

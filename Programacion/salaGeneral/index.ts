@@ -21,7 +21,6 @@ function procesarCaracter (char:string):string{
     return aux
 }
 
-
 palabra2 = palabra2.replace(/[aeiouAEIOU]/g, function(char){ 
     if (char == "A" || char == "E"|| char == "I" || char == "O" || char == "U") { 
         return char.toLowerCase(); 
