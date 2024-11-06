@@ -1,16 +1,17 @@
 import * as rs from "readline-sync";
 
 
-//tomando este codigo como base, escriba un algoritmo que permita al usuario
-//reemplazar todos los ceros de forma secuencial por el numero de su preferencia
-
-
+//tomando este codigo como base, 
 
 let matrixNums:number [][] = [
     [1,2,3],
     [4,5,6],
     [7,8,9],
 ]
+
+// Escriba un algoritmo que permita al usuario reemplazar todos los ceros de forma secuencial por el numero de su preferencia
+//      *desafio extra: mostrar los numeros ingresados por el usuario
+
 
 for (let i:number = 0;i < matrixNums.length;i++){
     for (let j:number = 0; j < matrixNums[i].length;j++){
@@ -19,7 +20,7 @@ for (let i:number = 0;i < matrixNums.length;i++){
 }
 
 console.log("\nLos numeros ingresados por el usuario son");
-console.log("-----------------------------------------");
+console.log("-------------------------------------------");
 
 for (let i:number = 0;i < matrixNums.length;i++){
     for (let j:number = 0; j < matrixNums[i].length;j++){

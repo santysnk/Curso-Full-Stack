@@ -4,7 +4,7 @@ import * as rs from "readline-sync";
 console.clear();
 let frase: string = rs.question("Ingrese alguna frase: ");
 //frase = " " + frase;
-let lista : RegExp = / (.{1})/g;  
+let lista : RegExp = / (.{1})/g;  //va a bbuscar un espacio por que hay un espacio entre los caracteres `/ (` y captura un caracter siguiente: (.{1})
 
 console.log("Frase original:", frase);
 

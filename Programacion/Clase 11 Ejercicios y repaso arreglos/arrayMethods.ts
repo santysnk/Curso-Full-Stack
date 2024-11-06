@@ -13,12 +13,12 @@ const cantantesDeOpera: string[] = [
 "Elīna Garanča",
 ]
 
-//con for OF
+//Mostrar array con un for OF
 for (let cantante of cantantesDeOpera){
     console.log(cantante);
 }
 
-//con forEach
+//Mostrar array con un forEach
 cantantesDeOpera.forEach((cantante) => 
     console.log(cantante));
 

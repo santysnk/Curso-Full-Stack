@@ -14,7 +14,7 @@ const matrix01 = crearMatrix(5,6);
 console.log(matrix01);
 
 
-//luego tenemos esto mas general:
+//luego tenemos esto mas general para mostrar los elementos de una matriz por consola:
 
 for (let item of matrix01){
     for (let innerItem of item){
@@ -23,14 +23,13 @@ for (let item of matrix01){
 }
 
 /*
-El código que me compartes está recorriendo una matriz (es decir, un arreglo de arreglos) en JavaScript o TypeScript y 
+El código que me está recorriendo una matriz (es decir, un arreglo de arreglos) en TypeScript y 
 luego imprime cada elemento individual de esa matriz.
 
 Aquí está el desglose de lo que hace:
 
-    1. **`createMatrix(2, 3)`**: Asumo que esta función crea una matriz de 2 filas y 3 columnas 
-    (aunque la implementación de `createMatrix` no está mostrada, lo que parece estar creando es una matriz 2x3).
-
+    1. **`createMatrix(2, 3)`**: esta función crea una matriz de 2 filas y 3 columnas 
+    
     2. **`console.log(matrix01);`**: Esto imprimirá la matriz completa (es decir, el arreglo bidimensional) en la consola.
 
     3. **Primer bucle `for`**: Se utiliza para iterar sobre cada fila de la matriz (`matrix01`). En este caso, `item` representaría 
@@ -49,21 +48,18 @@ Aquí está el desglose de lo que hace:
 
 Si `createMatrix(2, 3)` devuelve una matriz como esta:
 
-
 [
-  [1, 2, 3],
-  [4, 5, 6]
+    [1, 2, 3],
+    [4, 5, 6]
 ]
-
 
 La salida sería algo como:
 
-[ [ 1, 2, 3 ], [ 4, 5, 6 ] ]
 1
 2
 3
 4
 5
 6
-```
+
 */

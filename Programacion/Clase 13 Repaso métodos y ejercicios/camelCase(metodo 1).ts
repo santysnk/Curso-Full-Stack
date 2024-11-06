@@ -7,14 +7,17 @@
 */
 
 import * as rs from "readline-sync";
+
 let frase: string = rs.question("Ingrese alguna frase:");
 
 // Función para capitalizar la primera letra de cada palabra en un texto
 function capitalizeEachWord(texto: string): string {
-    return texto.split(' ').map(function(palabra) {
-        return palabra.charAt(0).toUpperCase() + palabra.slice(1);
-    }).join(''); 
+    return texto.split(' ')
+                .map((palabra) => palabra.charAt(0).toUpperCase() + palabra.slice(1))
+                .join(''); 
 }
+
+frase = capitalizeEachWord(frase);
 
 function toCamelCase(texto: string): string {
     let frase = capitalizeEachWord(texto); // Capitalizamos cada palabra
@@ -22,8 +25,8 @@ function toCamelCase(texto: string): string {
     return frase.charAt(0).toLowerCase() + frase.slice(1);
 }
 
-let fraseCamelCase:string = toCamelCase(frase);
-console.log(fraseCamelCase);
+frase= toCamelCase(frase);
+console.log(frase);
 
 /*texto.split(' ') divide el texto en un array de palabras, usando los espacios como separadores.
 

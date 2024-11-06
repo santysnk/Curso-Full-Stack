@@ -1,0 +1,20 @@
+/*/longitud del arreglo/*/
+import * as rl from "readline-sync";
+
+let cantidad:number =0
+cantidad = rl.questionInt ("¿Ingrese la longitud del arreglo: ");
+
+/* /indice/
+/primer arreglo/*/
+
+
+let v1: number[] = new Array(cantidad);
+console.log(v1);
+
+/*asignar valor a cada posicion del arreglo*/
+
+let i: number = 0;
+for (i = 0; i < v1.length; i++) {
+    v1[i] = rl.questionInt("ingrese el numero entero para el lugar " + (i++) + ": ");
+    console.log(v1[i]);
+}
