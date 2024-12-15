@@ -1,3 +1,6 @@
 [submodule "Entregas-CursoProgWeb"]
 	path = Entregas-CursoProgWeb
 	url = https://github.com/santysnk/Entregas-CursoProgWeb.git
+[submodule "Proyecto-Final"]
+	path = Proyecto-Final
+	url = https://github.com/santysnk/proyecto-final
