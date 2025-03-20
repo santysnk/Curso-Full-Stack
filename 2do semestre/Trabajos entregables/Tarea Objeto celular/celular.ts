@@ -35,7 +35,7 @@ export class Celular {
 
     mostrarInfo(info:string):string{
         info = `celular: ${this.marca}, modelo: ${this.modelo}, sistemaOperativo: ${this.sistemaOperativo}
-    memoriaRam: ${this.memoriaRam}, almacenamiento: ${this.almacenamiento}, apagado: ${this.estado}`
+         memoriaRam: ${this.memoriaRam}, almacenamiento: ${this.almacenamiento}, apagado: ${this.estado}`
         return info
     }
 }
