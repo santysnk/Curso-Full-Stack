@@ -37,4 +37,7 @@ console.log(Celular2.mostrarInfo(info));
 console.log("");
 console.log("****************************");
 console.log(Celular3.mostrarInfo(info));
-
+console.log("");
+console.log("###############################");
+Celular3.setMemoriaRam(8);
+console.log("La memoria de Celular3 se ha actualizado a:", Celular3.getMemoriaRam());
