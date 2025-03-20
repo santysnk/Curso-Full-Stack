@@ -12,7 +12,9 @@ y estado de encendido (por defecto apagado).
 Métodos adicionales:
     *encenderApagar(): Cambia el estado de encendido/apagado del celular.
     *mostrarInfo(): Retorna una cadena con los datos del celular.
-*/
+
+INTEGRANTES DEL EJERCICIO: VERONICA MARTIN, JUAN IGNACIO BAYUGAR Y CASAL SANTIAGO.
+    */
 
 import { Celular } from "./celular";
 
