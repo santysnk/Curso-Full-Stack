@@ -180,8 +180,8 @@ while (option != 0){
         case (option == 6):
                                     
             console.clear();
-            console.log("Expulsar Alumno (listado)");
-            console.log("------------------------\n");
+            console.log("Expulsar Alumno");
+            console.log("***************\n");
 
             EscuelaEjemplo.MostarListaEstudiantes();
 
@@ -189,7 +189,7 @@ while (option != 0){
 
             let indexAlum:number = rs.questionInt("ingrese numero para expulsar:") - 1;
             
-            if (indexAlum < cantAlumnos && indexAlum >= 0){
+            if (indexAlum < EscuelaEjemplo.getListaEstudiantes().length && indexAlum >= 0){
                 EscuelaEjemplo.expulsarAlumno(indexAlum)
             }else{
                 console.log(`\n[numero de ALUMNO incorrecto]\n`);
@@ -199,14 +199,14 @@ while (option != 0){
             break;
 
         case (option == 7):
-            EscuelaEjemplo.MostarListaEstudiantes();
+            EscuelaEjemplo.MostarListaProfesores();
 
             let indexProfe = rs.questionInt("\nSeleccione el numero del profesor: ") - 1;
             let profesorSeleccionado = EscuelaEjemplo.getProfesor(indexProfe);
             
             if (profesorSeleccionado) {
                 // Mostrar lista de alumnos de la escuela
-               
+                EscuelaEjemplo.MostarListaEstudiantes(true);
 
                 let indexAlumno = rs.questionInt("\nSeleccione el numero del alumno: ") - 1;
                 let alumnoSeleccionado = EscuelaEjemplo.getAlumno(indexAlumno);
@@ -230,19 +230,24 @@ while (option != 0){
             console.log("-------------------------------------------");
             
             // Mostrar lista de profesores
-            EscuelaEjemplo.getPersonal();
+            EscuelaEjemplo.MostarListaProfesores(true);
+
             let indexProfeElim = rs.questionInt("Seleccione el numero del profesor: ") - 1;
             let profesorParaEliminar = EscuelaEjemplo.getProfesor(indexProfeElim);
 
             if (profesorParaEliminar) {
                 // Mostrar lista de alumnos asignados al profesor
                 let listaAlumnos = profesorParaEliminar.getListaAlumnos();
+
                 if (listaAlumnos.length > 0) {
                     console.log("Lista de alumnos del profesor:");
+
                     for (let i = 0; i < listaAlumnos.length; i++) {
-                        console.log(`Alumno ${i + 1}: ${listaAlumnos[i].getNombre()}`);
+                        console.log(`Alumno ${i + 1}: ${listaAlumnos[i].getNombreEstudiante()}`);
                     }
+
                     let indexAlumnoElim = rs.questionInt("Seleccione el numero del alumno a eliminar: ") - 1;
+
                     if (indexAlumnoElim >= 0 && indexAlumnoElim < listaAlumnos.length) {
                         profesorParaEliminar.eliminarEstudiante(indexAlumnoElim);
                         console.log("Alumno eliminado de la lista del profesor.");
@@ -264,20 +269,7 @@ while (option != 0){
             console.log("Consultar nota de un alumno");
             console.log("---------------------------");
             // Mostrar lista de alumnos
-            EscuelaEjemplo.getEstudiantes();
-            let indexAlumnoNota = rs.questionInt("Seleccione el numero del alumno: ") - 1;
-            let alumnoConsultar = EscuelaEjemplo.getAlumno(indexAlumnoNota);
-            if (alumnoConsultar) {
-                console.log(`Nombre: ${alumnoConsultar.getNombre()}`);
-                console.log(`Nota: ${alumnoConsultar.getnota()}`);
-                console.log(alumnoConsultar.calificacion() ? "Aprobado" : "No aprobado");
-            } else {
-                console.log("Numero de alumno invalido.");
-            }
-            pausa = rs.question("presione enter para continuar..");
-            console.clear();
-            break;
+            EscuelaEjemplo.MostarListaEstudiantes(true);
     }
-
 }
 console.log("HA FINALIZADO");  
