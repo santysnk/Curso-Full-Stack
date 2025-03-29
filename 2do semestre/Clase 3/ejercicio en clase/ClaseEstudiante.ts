@@ -9,16 +9,16 @@ export class Estudiante {
 
     
    // Evalúa la calificación del alumno.
-   // retorna "aprovado" si la nota es mayor o igual a 7, o "NO aprovado" en caso contrario.
+   // retorna "aprobado" si la nota es mayor o igual a 7, o "NO aprobado" en caso contrario.
     public calificacion():string{
-        let aprovado:string;
+        let aprobado:string;
 
         if (this.nota >= 7){
-            aprovado = "aprovado";
+            aprobado = "aprobado";
         }else{
-            aprovado = "NO aprovado";
+            aprobado = "NO aprobado";
         }
-        return aprovado;
+        return aprobado;
     }
 
     // Retorna el nombre del estudiante.

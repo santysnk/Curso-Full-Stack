@@ -151,7 +151,7 @@ while (option != 0){
 
         case (option == 4):
             // MOSTRAR LISTA DE ALUMNOS (con detalles)
-            EscuelaEjemplo.MostarListaEstudiantes(true);
+            EscuelaEjemplo.MostrarListaEstudiantes(true);
 
             pausa = rs.question("\npresione enter para continuar..")
             console.clear();
@@ -185,7 +185,7 @@ while (option != 0){
             console.log("Expulsar Alumno");
             console.log("***************\n");
 
-            EscuelaEjemplo.MostarListaEstudiantes();
+            EscuelaEjemplo.MostrarListaEstudiantes();
 
             console.log("************************\n");
 
@@ -210,7 +210,7 @@ while (option != 0){
             if (profesorSeleccionado) {
 
                 // Mostrar lista de alumnos disponibles
-                EscuelaEjemplo.MostarListaEstudiantes(true);
+                EscuelaEjemplo.MostrarListaEstudiantes(true);
 
                 let indexAlumno = rs.questionInt("\nSeleccione el numero del alumno: ") - 1;
                 let alumnoSeleccionado = EscuelaEjemplo.getAlumno(indexAlumno);
@@ -295,7 +295,7 @@ while (option != 0){
             console.log("Consultar nota de un alumnos");
             console.log("---------------------------");
             // Mostrar lista de alumnos
-            EscuelaEjemplo.MostarListaEstudiantes(true);
+            EscuelaEjemplo.MostrarListaEstudiantes(true);
 
             pausa = rs.question("\npresione enter para continuar..");
             console.clear();
