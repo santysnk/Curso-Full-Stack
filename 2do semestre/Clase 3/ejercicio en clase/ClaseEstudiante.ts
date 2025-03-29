@@ -1,9 +1,9 @@
 export class Estudiante {
-    private nombre:string
+    private nombreAlumno:string
     private nota:number
 
     constructor (Pnombre:string,Pnota:number){
-        this.nombre = Pnombre;
+        this.nombreAlumno = Pnombre;
         this.nota = Pnota;
     }
 
@@ -12,18 +12,18 @@ export class Estudiante {
     }
 
     public getNombre():string{
-        return this.nombre;
+        return this.nombreAlumno;
     }
 
-    getnota():number{
+    public getnota():number{
         return this.nota;
     }
 
-    setNombre(Pnombre:string){
-        Pnombre = this.nombre;
+    public setNombre(Pnombre:string){
+        Pnombre = this.nombreAlumno;
     }
 
-    setNota(Pnota:number){
+    public setNota(Pnota:number){
         Pnota = this.nota;
     }
 
