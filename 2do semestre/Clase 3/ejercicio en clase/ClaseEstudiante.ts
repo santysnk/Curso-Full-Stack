@@ -7,8 +7,15 @@ export class Estudiante {
         this.nota = Pnota;
     }
 
-    public aprobado():boolean{
-        return this.nota > 7;
+    public calificacion():string{
+        let aprovado:string;
+
+        if (this.nota >= 7){
+            aprovado = "aprovado";
+        }else{
+            aprovado = "NO aprovado";
+        }
+        return aprovado;
     }
 
     public getNombre():string{
@@ -20,11 +27,11 @@ export class Estudiante {
     }
 
     public setNombre(Pnombre:string){
-        Pnombre = this.nombreAlumno;
+        this.nombreAlumno = Pnombre;
     }
 
     public setNota(Pnota:number){
-        Pnota = this.nota;
+        this.nota = Pnota;
     }
 
 
