@@ -23,6 +23,7 @@ console.clear();
 let option:number|null=null;
 let pausa:string|null = null;
 
+
 const EscuelaEjemplo:Escuela = new Escuela();
 
 while (option != 0){
@@ -86,7 +87,7 @@ while (option != 0){
 
         
         case (option == 2):    
-            let nameAlumno: string = "noName";
+            let nameAlumno: string = "";
             let notaAlumno: number = 0;
             let checkIngresoAlum: boolean = false;
             let checkAlumno: boolean = false;
@@ -106,7 +107,7 @@ while (option != 0){
                         let listaAlumnos = EscuelaEjemplo.getListaEstudiantes();
 
                         for (let i = 0; i < listaAlumnos.length; i++){
-                            if (nameAlumno === listaAlumnos[i].getNombre()){
+                            if (nameAlumno === listaAlumnos[i].getNombreEstudiante()){
                                 alumnoRepetido = true;
                                 break;
                             }
@@ -141,40 +142,34 @@ while (option != 0){
             break;
         
 
-        case (option == 3):    
-            console.clear();
-            console.log("Profesores Contratados");
-            console.log("----------------------\n");
-            EscuelaEjemplo.getPersonal();
+        case (option == 3):
+            EscuelaEjemplo.MostarListaProfesores(true);
+
             pausa = rs.question("\npresione enter para continuar..")
             console.clear();
             break;
 
         case (option == 4):
-            let listarAlumnos:li    
-            console.clear();
-            console.log("Alumnos matriculados");
-            console.log("--------------------\n");
-            EscuelaEjemplo.getListaEstudiantes();
+            EscuelaEjemplo.MostarListaEstudiantes(true);
+
             pausa = rs.question("\npresione enter para continuar..")
             console.clear();
             break;
 
         case (option == 5):
-
-            let numeroProfeExpulsado:number|null =null; 
-            
             console.clear();
             console.log("Expulsar Profesor");
-            console.log("----------------\n");
-            console.log("listado:");
-            console.log("------\n");
-            EscuelaEjemplo.getPersonal();
-            console.log("************************\n");
-            numeroProfeExpulsado = rs.questionInt("ingrese numero para expulsar:") - 1;
+            console.log("*****************\n");
             
-            if (numeroProfeExpulsado < EscuelaEjemplo.getCantidadProfe() && numeroProfeExpulsado >= 0){
-                EscuelaEjemplo.expulsarPersonal(numeroProfeExpulsado)
+            EscuelaEjemplo.MostarListaProfesores(true);
+
+            console.log("************************\n");
+
+            let indexProfeExpulsar = rs.questionInt("ingrese numero para expulsar:") - 1;
+            let cantProfesores = EscuelaEjemplo.cantProfesores();
+
+            if (indexProfeExpulsar < cantProfesores && indexProfeExpulsar >= 0){
+                EscuelaEjemplo.expulsarProfesor(indexProfeExpulsar)
             }else{
                 console.log(`\n[numero de PROFESOR incorrecto]\n`);
                 pausa = rs.question("presione enter para continuar..")
@@ -183,20 +178,19 @@ while (option != 0){
             break;
 
         case (option == 6):
-
-            let numeroAlumnoExpulsado:number|null =null; 
-            
+                                    
             console.clear();
-            console.log("Expulsar Alumno");
-            console.log("----------------\n");
-            console.log("listado:");
-            console.log("------\n");
-            EscuelaEjemplo.getEstudiantes();
+            console.log("Expulsar Alumno (listado)");
+            console.log("------------------------\n");
+
+            EscuelaEjemplo.MostarListaEstudiantes();
+
             console.log("************************\n");
-            numeroAlumnoExpulsado = rs.questionInt("ingrese numero para expulsar:") - 1;
+
+            let indexAlum:number = rs.questionInt("ingrese numero para expulsar:") - 1;
             
-            if (numeroAlumnoExpulsado < EscuelaEjemplo.getCantidadAlumnos() && numeroAlumnoExpulsado >= 0){
-                EscuelaEjemplo.expulsarAlumno(numeroAlumnoExpulsado)
+            if (indexAlum < cantAlumnos && indexAlum >= 0){
+                EscuelaEjemplo.expulsarAlumno(indexAlum)
             }else{
                 console.log(`\n[numero de ALUMNO incorrecto]\n`);
                 pausa = rs.question("presione enter para continuar..")
@@ -204,21 +198,15 @@ while (option != 0){
             }
             break;
 
-            case (option == 7):
-            console.clear();
-            console.log("Agregar alumno a la lista de un profesor");
-            console.log("-----------------------------------------");
-            
-            EscuelaEjemplo.getPersonal();
+        case (option == 7):
+            EscuelaEjemplo.MostarListaEstudiantes();
+
             let indexProfe = rs.questionInt("\nSeleccione el numero del profesor: ") - 1;
             let profesorSeleccionado = EscuelaEjemplo.getProfesor(indexProfe);
             
             if (profesorSeleccionado) {
                 // Mostrar lista de alumnos de la escuela
-                console.clear();
-                console.log("Lista de alumnos inscritos");
-                console.log("---------------------------\n");
-                EscuelaEjemplo.getEstudiantes();
+               
 
                 let indexAlumno = rs.questionInt("\nSeleccione el numero del alumno: ") - 1;
                 let alumnoSeleccionado = EscuelaEjemplo.getAlumno(indexAlumno);

@@ -31,38 +31,52 @@ export class Escuela{
         return this.alumnosInscriptos
     }
 
+    public MostarListaEstudiantes(conDatos?: Boolean){   
+        let cantAlumnos = this.alumnosInscriptos.length 
+
+        console.clear();
+        console.log("Lista de alumnos");
+        console.log("----------------\n");
+
+        if (conDatos){
+            for (let i = 0 ; i < cantAlumnos ; i++){
+                console.log("Alumno ["+ (i+1) + "] de " + cantAlumnos + 
+                ": " + this.alumnosInscriptos[i].getNombreEstudiante() + 
+                " Nota: " + this.alumnosInscriptos[i].getNotaEstudiante() +
+                " (" + this.alumnosInscriptos[i].calificacion() + ")"
+                );
+            }
+        }else{    
+            for (let i = 0 ; i < cantAlumnos ; i++){
+                console.log(`Alumno [${i+1}] de ${cantAlumnos}: ${this.alumnosInscriptos[i].getNombreEstudiante()}`);
+            }
+        }
+    }
+
     getListaProfesores(){
         return this.profesorContratado
     }
 
-    /*
-    const cantAlumnos:number = this.alumnosInscriptos.length
-    for (let i = 0 ; i < cantAlumnos ; i++){
-        console.log("Alumno ["+ (i+1) + "] de " + cantAlumnos + 
-        ": " + this.alumnosInscriptos[i].getNombre() + 
-        " Nota: " + this.alumnosInscriptos[i].getnota() +
-        " (" +this.alumnosInscriptos[i].calificacion() + ")"
-        );
-    }
-    */
+    public MostarListaProfesores(conListaAlumnos?: Boolean){   
+        let cantProfe = this.profesorContratado.length 
 
-
-  
+        console.clear();
+        console.log("Lista de profesores");
+        console.log("-------------------\n");
         
+        for (let i = 0 ; i < cantProfe ; i++){
+            console.log(`Profesor [${i+1}] de ${cantProfe}: ${this.profesorContratado[i].getnombreProfesor()}`);
+            
+            if (conListaAlumnos){
+                let listaAlumProfesor = this.profesorContratado[i].getListaAlumnos()
+                let cantAlumLista:number = listaAlumProfesor.length
 
-    /*
-    const cantPersonal:number = this.profesorContratado.length
-
-            for (let i = 0 ; i < cantPersonal ; i++){
-                let alumnosDelProfesor:number = this.profesorContratado[i].getListaAlumnos().length
-                console.log(`Profesor [${i+1}] de ${cantPersonal}: ${this.profesorContratado[i].getnombreProfesor()}`);
-                
-                if (alumnosDelProfesor > 0){
+                if (cantAlumLista > 0){
                     console.log(`   Alumnos en su lista:`);
-                    for (let z = 0; z < alumnosDelProfesor ;z++){
-                        console.log("    → " + this.profesorContratado[i].getListaAlumnos()[z].getNombre() + 
-                        ", nota: " + this.profesorContratado[i].getListaAlumnos()[z].getnota() + 
-                        " (" + this.profesorContratado[i].getListaAlumnos()[z].calificacion() +")"
+                    for (let z = 0; z < cantAlumLista ; z++){
+                        console.log("    → " + listaAlumProfesor[z].getNombreEstudiante() + 
+                        ", nota: " + listaAlumProfesor[z].getNotaEstudiante() + 
+                        " (" + listaAlumProfesor[z].calificacion() +")"
                         );
                     }
                 }else{
@@ -70,7 +84,12 @@ export class Escuela{
                 }
             }
         }
-    */
+        
+    }
+
+    public cantProfesores():number{
+        return this.profesorContratado.length
+    }
 
     public expulsarAlumno (numAlumno:number){
         const cantAlumnos:number = this.alumnosInscriptos.length
@@ -85,7 +104,7 @@ export class Escuela{
         }
     }
 
-    public expulsarPersonal (numProfesor:number){
+    public expulsarProfesor (numProfesor:number){
         const cantProfesores:number = this.profesorContratado.length
         
         if (cantProfesores >= numProfesor){
@@ -98,14 +117,15 @@ export class Escuela{
         }
     }
 
-    public getCantidadProfe():number{
-        return this.profesorContratado.length
+    // método para obtener un profesor por índice
+    public getProfesor(index: number): Profesor | undefined {
+        if (index >= 0 && index < this.profesorContratado.length) {
+            return this.profesorContratado[index];
+        }
+        return undefined;
     }
 
-    public getCantidadAlumnos():number{
-        return this.alumnosInscriptos.length
-    }
-
+    // método para obtener un alumno por índice
     public getAlumno(index: number): Estudiante | undefined {
         if (index >= 0 && index < this.alumnosInscriptos.length) {
             return this.alumnosInscriptos[index];
@@ -113,11 +133,5 @@ export class Escuela{
         return undefined;
     }
 
-    // Nuevo método para obtener un profesor por índice
-    public getProfesor(index: number): Profesor | undefined {
-        if (index >= 0 && index < this.profesorContratado.length) {
-            return this.profesorContratado[index];
-        }
-        return undefined;
-    }
+    
 }

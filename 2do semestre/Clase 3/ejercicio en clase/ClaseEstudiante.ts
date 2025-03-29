@@ -18,11 +18,11 @@ export class Estudiante {
         return aprovado;
     }
 
-    public getNombre():string{
+    public getNombreEstudiante():string{
         return this.nombreAlumno;
     }
 
-    public getnota():number{
+    public getNotaEstudiante():number{
         return this.nota;
     }
 
