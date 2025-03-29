@@ -35,13 +35,13 @@ export class Escuela{
         let cantAlumnos = this.alumnosInscriptos.length 
 
         console.clear();
-        console.log("Lista de alumnos");
-        console.log("----------------\n");
+        console.log("Lista de alumnos [" + cantAlumnos + "]");
+        console.log("--------------------\n");
 
         if (conDatos){
             for (let i = 0 ; i < cantAlumnos ; i++){
-                console.log("Alumno ["+ (i+1) + "] de " + cantAlumnos + 
-                ": " + this.alumnosInscriptos[i].getNombreEstudiante() + 
+                console.log("Alumno ["+ (i+1) + "]: "  +
+                this.alumnosInscriptos[i].getNombreEstudiante() + 
                 " Nota: " + this.alumnosInscriptos[i].getNotaEstudiante() +
                 " (" + this.alumnosInscriptos[i].calificacion() + ")"
                 );
@@ -61,11 +61,11 @@ export class Escuela{
         let cantProfe = this.profesorContratado.length 
 
         console.clear();
-        console.log("Lista de profesores");
-        console.log("-------------------\n");
+        console.log("Lista de profesores [" + cantProfe + "]" );
+        console.log("-----------------------");
         
         for (let i = 0 ; i < cantProfe ; i++){
-            console.log(`Profesor [${i+1}] de ${cantProfe}: ${this.profesorContratado[i].getnombreProfesor()}`);
+            console.log(`\nProfesor [${i+1}]: ${this.profesorContratado[i].getnombreProfesor()}`);
             
             if (conListaAlumnos){
                 let listaAlumProfesor = this.profesorContratado[i].getListaAlumnos()
