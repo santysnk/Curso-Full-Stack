@@ -5,8 +5,9 @@ import * as rs from "readline-sync";
 export class Escuela{
     private alumnosInscriptos:Estudiante[]=[];
     private profesorContratado:Profesor[]=[];
-    private pausa:string|null = null;
+    private pausa:string|null = null; // Variable para pausar la ejecución y esperar ingreso del usuario.
 
+    // Metodo para contratar a un profesor.
     setContratarPersonal (personaLName:string){
         const nuevoProfe:Profesor = new Profesor(personaLName)
 
@@ -17,6 +18,7 @@ export class Escuela{
         console.clear();
     }
 
+     // Metodo para inscribir un nuevo estudiante.
     setEstudianteNuevo (alumno:string, nota:number){
         const nuevoAlumno:Estudiante = new Estudiante(alumno,nota);
         
@@ -27,45 +29,54 @@ export class Escuela{
         console.clear();
     }
 
+    // Retorna la lista de estudiantes inscritos.
     getListaEstudiantes(){
         return this.alumnosInscriptos
     }
 
-    public MostarListaEstudiantes(conDatos?: Boolean){   
+    
+    //  Muestra la lista de estudiantes.
+    //  parametro "conDatos": Si es true, muestra nombre, nota y calificación; si no, muestra solo el nombre.
+    public MostrarListaEstudiantes(conDatos?: Boolean){   
         let cantAlumnos = this.alumnosInscriptos.length 
 
         console.clear();
-        console.log("Lista de alumnos");
-        console.log("----------------\n");
+        console.log("Lista de alumnos [" + cantAlumnos + "]");
+        console.log("--------------------\n");
 
         if (conDatos){
             for (let i = 0 ; i < cantAlumnos ; i++){
-                console.log("Alumno ["+ (i+1) + "] de " + cantAlumnos + 
-                ": " + this.alumnosInscriptos[i].getNombreEstudiante() + 
+                console.log("Alumno ["+ (i+1) + "]: "  +
+                this.alumnosInscriptos[i].getNombreEstudiante() + 
                 " Nota: " + this.alumnosInscriptos[i].getNotaEstudiante() +
                 " (" + this.alumnosInscriptos[i].calificacion() + ")"
                 );
             }
-        }else{    
+        }else{  
+            // Muestra solo el nombre de cada alumno.  
             for (let i = 0 ; i < cantAlumnos ; i++){
                 console.log(`Alumno [${i+1}] de ${cantAlumnos}: ${this.alumnosInscriptos[i].getNombreEstudiante()}`);
             }
         }
     }
 
+    // Retorna la lista de profesores contratados.
     getListaProfesores(){
         return this.profesorContratado
     }
 
+    
+   // Muestra la lista de profesores.
+   // parametro "conListaAlumnos": Si es true, muestra también la lista de alumnos asignados a cada profesor.
     public MostarListaProfesores(conListaAlumnos?: Boolean){   
         let cantProfe = this.profesorContratado.length 
 
         console.clear();
-        console.log("Lista de profesores");
-        console.log("-------------------\n");
+        console.log("Lista de profesores [" + cantProfe + "]" );
+        console.log("-----------------------");
         
         for (let i = 0 ; i < cantProfe ; i++){
-            console.log(`Profesor [${i+1}] de ${cantProfe}: ${this.profesorContratado[i].getnombreProfesor()}`);
+            console.log(`\nProfesor [${i+1}]: ${this.profesorContratado[i].getnombreProfesor()}`);
             
             if (conListaAlumnos){
                 let listaAlumProfesor = this.profesorContratado[i].getListaAlumnos()
@@ -87,10 +98,12 @@ export class Escuela{
         
     }
 
+    // Retorna la cantidad de profesores contratados.
     public cantProfesores():number{
         return this.profesorContratado.length
     }
 
+    // Expulsa (elimina) a un alumno de la lista según su índice.
     public expulsarAlumno (numAlumno:number){
         const cantAlumnos:number = this.alumnosInscriptos.length
                 
@@ -104,6 +117,7 @@ export class Escuela{
         }
     }
 
+    // Expulsa (elimina) a un profesor de la lista según su índice.
     public expulsarProfesor (numProfesor:number){
         const cantProfesores:number = this.profesorContratado.length
         
@@ -117,7 +131,7 @@ export class Escuela{
         }
     }
 
-    // método para obtener un profesor por índice
+    // método para obtener un profesor por índice en la lista.
     public getProfesor(index: number): Profesor | undefined {
         if (index >= 0 && index < this.profesorContratado.length) {
             return this.profesorContratado[index];
@@ -125,7 +139,7 @@ export class Escuela{
         return undefined;
     }
 
-    // método para obtener un alumno por índice
+    // método para obtener un alumno por índice en la lista.
     public getAlumno(index: number): Estudiante | undefined {
         if (index >= 0 && index < this.alumnosInscriptos.length) {
             return this.alumnosInscriptos[index];

@@ -14,16 +14,12 @@ Aplicar lo visto hasta esta clase para modelar un sistema educativo donde:
 
 import * as rs from "readline-sync";
 import { Escuela } from "./ClaseEscuela";
-import { Estudiante } from "./ClaseEstudiante"
-import { Profesor } from "./ClaseProfesor"
-
-
 
 console.clear();
 let option:number|null=null;
 let pausa:string|null = null;
 
-
+// Instanciamos la escuela.
 const EscuelaEjemplo:Escuela = new Escuela();
 
 while (option != 0){
@@ -44,6 +40,7 @@ while (option != 0){
 \n`);
     option = rs.questionInt("Ingrese una opcion para continuar: ")
     
+     // Usamos un switch con casos basados en la opción ingresada.
     switch(true){
         case (option == 1):
             let nameProfe: string = "";
@@ -55,7 +52,8 @@ while (option != 0){
             console.log("----------------");
 
             while (!checkIngresoProf) {
-                // Validar que se ingrese un nombre y que no esté repetido
+
+                // Validación de ingreso: nombre no vacío y sin duplicados.
                 while (!checkProfe) {
                     nameProfe = rs.question("Ingrese nombre: ");
 
@@ -79,14 +77,16 @@ while (option != 0){
                         console.log("[Nombre incorrecto]");
                     }
                 }
+
                 // Si el nombre es válido y no está duplicado, se agrega el profesor.
                 EscuelaEjemplo.setContratarPersonal(nameProfe);
                 checkIngresoProf = true;
             }
             break;
 
-        
-        case (option == 2):    
+        case (option == 2):
+             // AGREGAR ALUMNO
+            
             let nameAlumno: string = "";
             let notaAlumno: number = 0;
             let checkIngresoAlum: boolean = false;
@@ -99,7 +99,7 @@ while (option != 0){
         
             while (!checkIngresoAlum) {
         
-                // Verificar nombre de alumno sin duplicados
+                // Validar nombre del alumno (no vacío y sin duplicados).
                 while (!checkAlumno) {
                     nameAlumno = rs.question("Ingrese nombre: ");
                     if (nameAlumno != null && nameAlumno.trim() !== "") {  
@@ -141,8 +141,8 @@ while (option != 0){
             }
             break;
         
-
         case (option == 3):
+             // MOSTRAR LISTA DE PROFESORES (con detalles)
             EscuelaEjemplo.MostarListaProfesores(true);
 
             pausa = rs.question("\npresione enter para continuar..")
@@ -150,13 +150,15 @@ while (option != 0){
             break;
 
         case (option == 4):
-            EscuelaEjemplo.MostarListaEstudiantes(true);
+            // MOSTRAR LISTA DE ALUMNOS (con detalles)
+            EscuelaEjemplo.MostrarListaEstudiantes(true);
 
             pausa = rs.question("\npresione enter para continuar..")
             console.clear();
             break;
 
         case (option == 5):
+            // EXPULSAR PROFESOR
             console.clear();
             console.log("Expulsar Profesor");
             console.log("*****************\n");
@@ -178,12 +180,12 @@ while (option != 0){
             break;
 
         case (option == 6):
-                                    
+            // EXPULSAR ALUMNO                       
             console.clear();
             console.log("Expulsar Alumno");
             console.log("***************\n");
 
-            EscuelaEjemplo.MostarListaEstudiantes();
+            EscuelaEjemplo.MostrarListaEstudiantes();
 
             console.log("************************\n");
 
@@ -199,32 +201,53 @@ while (option != 0){
             break;
 
         case (option == 7):
+            // AGREGAR ALUMNO A LA LISTA DE UN PROFESOR
             EscuelaEjemplo.MostarListaProfesores();
 
             let indexProfe = rs.questionInt("\nSeleccione el numero del profesor: ") - 1;
             let profesorSeleccionado = EscuelaEjemplo.getProfesor(indexProfe);
             
             if (profesorSeleccionado) {
-                // Mostrar lista de alumnos de la escuela
-                EscuelaEjemplo.MostarListaEstudiantes(true);
+
+                // Mostrar lista de alumnos disponibles
+                EscuelaEjemplo.MostrarListaEstudiantes(true);
 
                 let indexAlumno = rs.questionInt("\nSeleccione el numero del alumno: ") - 1;
                 let alumnoSeleccionado = EscuelaEjemplo.getAlumno(indexAlumno);
 
+                let listaAlumDeProf = profesorSeleccionado.getListaAlumnos();
+                let cantListaAlumDeProf = listaAlumDeProf.length;
+
                 if (alumnoSeleccionado) {
-                    profesorSeleccionado.agregarEstudiante(alumnoSeleccionado);
-                    console.log("\n[Alumno agregado a la lista del profesor.]");
+                    // Validar que el alumno no esté ya asignado al profesor.
+                    let alumnoRepetido: boolean = false;
+
+                    for (let i = 0; i < cantListaAlumDeProf; i++){
+                        if (alumnoSeleccionado.getNombreEstudiante() === listaAlumDeProf[i].getNombreEstudiante()){
+                            alumnoRepetido = true;
+                            console.log("\n[Alumno repetido (ya se encuentra en la lista del profesor)]");
+                            break;
+                        }
+                    }
+
+                    if (!alumnoRepetido){
+                        profesorSeleccionado.agregarEstudiante(alumnoSeleccionado);
+                        console.log("\n[Alumno agregado a la lista del profesor.]");
+                    }    
+
                 } else {
                     console.log("\n[Numero de alumno invalido.]");
                 }
             } else {
                 console.log("\n[Numero de profesor invalido.]");
             }
+
             pausa = rs.question("\nPresione enter para continuar");
             console.clear();
             break;
 
         case (option == 8):
+             // ELIMINAR ALUMNO DE LA LISTA DE UN PROFESOR
             console.clear();
             console.log("Eliminar alumno de la lista de un profesor");
             console.log("-------------------------------------------");
@@ -232,7 +255,7 @@ while (option != 0){
             // Mostrar lista de profesores
             EscuelaEjemplo.MostarListaProfesores(true);
 
-            let indexProfeElim = rs.questionInt("Seleccione el numero del profesor: ") - 1;
+            let indexProfeElim = rs.questionInt("\nSeleccione el numero del profesor: ") - 1;
             let profesorParaEliminar = EscuelaEjemplo.getProfesor(indexProfeElim);
 
             if (profesorParaEliminar) {
@@ -240,13 +263,15 @@ while (option != 0){
                 let listaAlumnos = profesorParaEliminar.getListaAlumnos();
 
                 if (listaAlumnos.length > 0) {
+                    console.clear();
                     console.log("Lista de alumnos del profesor:");
+                    console.log("-----------------------------\n");
 
                     for (let i = 0; i < listaAlumnos.length; i++) {
-                        console.log(`Alumno ${i + 1}: ${listaAlumnos[i].getNombreEstudiante()}`);
+                        console.log(`    → Alumno [${i + 1}]: ${listaAlumnos[i].getNombreEstudiante()}`);
                     }
 
-                    let indexAlumnoElim = rs.questionInt("Seleccione el numero del alumno a eliminar: ") - 1;
+                    let indexAlumnoElim = rs.questionInt("\nSeleccione el numero del alumno a eliminar: ") - 1;
 
                     if (indexAlumnoElim >= 0 && indexAlumnoElim < listaAlumnos.length) {
                         profesorParaEliminar.eliminarEstudiante(indexAlumnoElim);
@@ -260,16 +285,21 @@ while (option != 0){
             } else {
                 console.log("Numero de profesor invalido.");
             }
-            pausa = rs.question("presione enter para continuar..");
+            pausa = rs.question("\npresione enter para continuar..");
             console.clear();
             break;
 
         case (option == 9):
+            // CONSULTAR NOTA DE UN ALUMNO (se muestra la lista con sus calificaciones)
             console.clear();
-            console.log("Consultar nota de un alumno");
+            console.log("Consultar nota de un alumnos");
             console.log("---------------------------");
             // Mostrar lista de alumnos
-            EscuelaEjemplo.MostarListaEstudiantes(true);
+            EscuelaEjemplo.MostrarListaEstudiantes(true);
+
+            pausa = rs.question("\npresione enter para continuar..");
+            console.clear();
+            break;
     }
 }
 console.log("HA FINALIZADO");  
