@@ -1,0 +1,80 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #1a1a1a; /* Fondo oscuro como en la imagen original */
+  color: #fff;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background-color: #006400; /* Verde oscuro para la barra superior */
+  padding: 10px;
+  text-align: center;
+}
+
+main {
+  padding: 20px;
+}
+
+.busbar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.section {
+  display: flex;
+  justify-content: center;
+  gap: 20px; /* Espacio entre paneles */
+  margin: 10px 0;
+}
+
+.panel {
+  background-color: #333; /* Fondo gris oscuro para los paneles */
+  border: 1px solid #555; /* Borde gris para delimitar */
+  padding: 10px;
+  width: 200px; /* Ancho fijo para consistencia */
+  text-align: center;
+}
+
+.panel .title {
+  background-color: #006400; /* Verde oscuro para la barra de título */
+  color: #fff;
+  padding: 5px;
+  font-weight: bold;
+}
+
+.panel .data {
+  margin: 10px 0;
+}
+
+.panel .data label {
+  color: #00bfff; /* Azul claro para etiquetas de voltaje y corriente */
+  font-weight: bold;
+}
+
+.panel .data .values {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 5px;
+}
+
+.panel .data .values span {
+  color: #ffd700; /* Amarillo para los valores numéricos */
+  font-size: 1.2em;
+}
+
+.panel .events {
+  background-color: #006400; /* Verde oscuro para el botón de eventos */
+  color: #fff;
+  padding: 5px;
+  margin-top: 10px;
+  font-size: 0.9em;
+}
+
+.busbar-line {
+  width: 100%;
+  height: 2px;
+  background-color: #ffd700; /* Línea amarilla para el busbar */
+  margin: 20px 0;
+}
