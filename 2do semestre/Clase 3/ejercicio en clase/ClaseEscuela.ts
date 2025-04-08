@@ -37,7 +37,7 @@ export class Escuela{
     
     //  Muestra la lista de estudiantes.
     //  parametro "conDatos": Si es true, muestra nombre, nota y calificación; si no, muestra solo el nombre.
-    public MostrarListaEstudiantes(conDatos?: Boolean){   
+    public MostrarListaEstudiantes(conDatos?: boolean){   
         let cantAlumnos = this.alumnosInscriptos.length 
 
         console.clear();
@@ -68,7 +68,7 @@ export class Escuela{
     
    // Muestra la lista de profesores.
    // parametro "conListaAlumnos": Si es true, muestra también la lista de alumnos asignados a cada profesor.
-    public MostarListaProfesores(conListaAlumnos?: Boolean){   
+    public mostrarListaProfesores(conListaAlumnos: boolean = false){   
         let cantProfe = this.profesorContratado.length 
 
         console.clear();

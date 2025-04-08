@@ -48,7 +48,6 @@ while (option != 0){
             let checkProfe: boolean = false;
 
             console.clear();
-            console.log("Agregar profesor");
             console.log("----------------");
 
             while (!checkIngresoProf) {
@@ -143,7 +142,7 @@ while (option != 0){
         
         case (option == 3):
              // MOSTRAR LISTA DE PROFESORES (con detalles)
-            EscuelaEjemplo.MostarListaProfesores(true);
+            EscuelaEjemplo.mostrarListaProfesores(true);
 
             pausa = rs.question("\npresione enter para continuar..")
             console.clear();
@@ -163,7 +162,7 @@ while (option != 0){
             console.log("Expulsar Profesor");
             console.log("*****************\n");
             
-            EscuelaEjemplo.MostarListaProfesores(true);
+            EscuelaEjemplo.mostrarListaProfesores(true);
 
             console.log("************************\n");
 
@@ -202,7 +201,7 @@ while (option != 0){
 
         case (option == 7):
             // AGREGAR ALUMNO A LA LISTA DE UN PROFESOR
-            EscuelaEjemplo.MostarListaProfesores();
+            EscuelaEjemplo.mostrarListaProfesores();
 
             let indexProfe = rs.questionInt("\nSeleccione el numero del profesor: ") - 1;
             let profesorSeleccionado = EscuelaEjemplo.getProfesor(indexProfe);
@@ -253,7 +252,7 @@ while (option != 0){
             console.log("-------------------------------------------");
             
             // Mostrar lista de profesores
-            EscuelaEjemplo.MostarListaProfesores(true);
+            EscuelaEjemplo.mostrarListaProfesores(true);
 
             let indexProfeElim = rs.questionInt("\nSeleccione el numero del profesor: ") - 1;
             let profesorParaEliminar = EscuelaEjemplo.getProfesor(indexProfeElim);

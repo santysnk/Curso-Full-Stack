@@ -1,0 +1,105 @@
+🌟 Introducción sencilla a HTML: ¿Qué es?
+
+Imagina que estás construyendo una casa 🏠:
+
+    HTML es la estructura básica de la casa (paredes, puertas, ventanas).
+
+    CSS (que aprenderás más adelante) sería la decoración y pintura.
+
+    JavaScript o TypeScript (que ya conoces) sería la electricidad, las cañerías, y todo lo que hace que la casa funcione o "haga cosas".
+
+En resumen, HTML le dice al navegador cómo es la estructura y el contenido de tu página web.
+
+----------------------------------------------------------------------------------------------------------------------------------------------
+
+📌 ¿Cómo funciona HTML?
+
+HTML significa HyperText Markup Language o Lenguaje de Marcas de Hipertexto. (llamado lenguaje de etiqueteas)
+
+Es decir:
+
+    HyperText porque es texto con enlaces que llevan a otros textos o páginas.
+
+    Markup porque usamos etiquetas (<etiqueta>) para decirle al navegador qué tipo de contenido estamos mostrando.
+
+----------------------------------------------------------------------------------------------------------------------------------------------
+
+🧱 Las etiquetas HTML: El "bloque básico"
+
+Las etiquetas son como cajas que contienen información.
+
+Ejemplo simple:
+
+    <p>Hola, mundo!</p>
+
+  • <p>: es la etiqueta que significa párrafo (como un bloque de texto).
+
+  • El texto "Hola, mundo!" es lo que ve el usuario.
+
+  • </p> indica el cierre de esa etiqueta o caja.
+
+Analogía:
+    Imagina que etiquetas HTML son como cajones con etiquetas que indican qué guardas dentro (ropa, zapatos, libros). 
+    El navegador abre cada etiqueta y presenta el contenido según corresponda.
+
+----------------------------------------------------------------------------------------------------------------------------------------------
+
+⚙️ Estructura básica de un documento HTML
+
+Todo documento HTML tiene esta estructura mínima:
+
+<!DOCTYPE html>                            <!-- Versión HTML que usas -->     Es como decir "este archivo sigue las reglas de HTML moderno".
+<html>                                     <!-- Comienza la página -->        El contenedor principal, como la función main() en otros lenguajes.
+  <head>                                   <!-- Información no visible -->    Aquí va información "detrás de escena", como el título que aparece en la pestaña del navegador.
+    <title>Mi primera página</title>       <!-- Título de la pestaña -->
+  </head>
+
+  <body>                                 <!-- Todo lo visible -->             Aquí va todo lo que tu amigo verá en la pantalla, como textos o imágenes.
+    <h1>Hola, soy un título</h1>
+    <p>¡Y yo soy un párrafo!</p>
+  </body>
+</html>
+
+Analogía:
+    Piensa en head como la parte interna del libro (índice, datos técnicos) y en body como el contenido real (capítulos e imágenes).
+    Si TypeScript tuviera un programa, el <body> sería como el console.log() que muestra algo al usuario, 
+    mientras que <head> sería como las configuraciones iniciales que no se ven directamente.
+
+----------------------------------------------------------------------------------------------------------------------------------------------
+
+🎯 Ejemplos de etiquetas básicas
+
+Vamos a presentarle algunas etiquetas básicas con ejemplos que pueda probar.
+
+    Títulos (<h1> a <h6>):
+
+        Son como encabezados en un documento de Word, de más grande (h1) a más pequeño (h6).
+        Ejemplo:
+
+            <h1>Mi título principal</h1>
+            <h2>Un subtítulo</h2>
+
+
+Párrafos (<p>):
+
+    Para texto normal, como el cuerpo de un correo.
+    Ejemplo:
+    
+            <p>Este es mi primer párrafo. ¡Es fácil!</p>
+
+Enlaces (<a>):
+
+    Como un botón en TypeScript que lleva a otro lugar.
+    Ejemplo:
+   
+        <a href="https://google.com">Haz clic aquí</a>           <!-- href es como un parámetro que le dice a dónde ir.  --> 
+        
+
+Imágenes (<img>):
+
+    No necesita cerrar la etiqueta, es como un return rápido en una función.
+    Ejemplo:
+   
+        <img src="https://i.imgur.com/abc123.jpg" alt="Un perrito">     <!-- src es la URL de la imagen, alt es una descripción por si no carga.  --> 
+
+    
