@@ -1,0 +1,16 @@
+.mi-boton{
+    width: 400px;
+    height: 200px;
+    background-color: rgb(113, 0, 98);     /* Color rosa del botón */
+    color: white;               /* Color del texto dentro del botón */
+    border: 30px solid aqua;              /* Sin borde */
+    border-radius: 15px;         /* Bordes redondeados, opcional */
+    font-size: 14px;            /* Tamaño de la letra */
+    cursor: pointer;            /* Cambia el puntero al pasar por encima */
+}
+
+.mi-titulo{
+    text-align: center;
+    color: blue;
+
+}
