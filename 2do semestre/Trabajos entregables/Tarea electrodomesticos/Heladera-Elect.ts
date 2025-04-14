@@ -19,7 +19,7 @@ export class Heladera extends Electrodomestico {
         return this.temperatura;
     }
 
-     // Métodos    
+    // Métodos    
     public mostrarInfo() {
         super.mostrarInfo();
         console.log(`Temperatura actual: ${this.temperatura}°C.`);

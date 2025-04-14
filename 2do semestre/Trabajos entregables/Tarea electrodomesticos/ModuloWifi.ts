@@ -16,11 +16,11 @@ export class ModuloWifi {
         return this.frecuenciaGHz;
     }   
 
-      // Setters
+    // Setters
     public setVelocidadMbps(pVel: number) {
         this.velocidadMbps = pVel;
     }
-    
+
     public setFrecuenciaGHz(pFrec: number) {
         this.frecuenciaGHz = pFrec;
     }
