@@ -8,20 +8,20 @@ export class ModuloWifi {
     }
 
     // Getters
-    public getVelocidadMbps(): number {
+    public getVelocidadMbps():number {
         return this.velocidadMbps;
     }
 
-    public getFrecuenciaGHz(): number {
+    public getFrecuenciaGHz():number {
         return this.frecuenciaGHz;
     }   
 
     // Setters
-    public setVelocidadMbps(pVel: number) {
+    public setVelocidadMbps(pVel:number) {
         this.velocidadMbps = pVel;
     }
 
-    public setFrecuenciaGHz(pFrec: number) {
+    public setFrecuenciaGHz(pFrec:number) {
         this.frecuenciaGHz = pFrec;
     }
 }

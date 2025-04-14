@@ -3,7 +3,7 @@ import { ModuloWifi } from "./ModuloWifi";
 
 
 export class SmartHeladera extends Heladera {
-    private moduloWifi: ModuloWifi;
+    private moduloWifi:ModuloWifi;
 
     constructor(marca: string, modelo: string, temperatura: number, moduloWifi: ModuloWifi) {
         super(marca, modelo, temperatura);

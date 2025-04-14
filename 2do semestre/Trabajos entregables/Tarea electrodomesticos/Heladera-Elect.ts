@@ -15,7 +15,7 @@ export class Heladera extends Electrodomestico {
     }
 
     // Getter 
-    public getTemperatura(): number {
+    public getTemperatura():number {
         return this.temperatura;
     }
 

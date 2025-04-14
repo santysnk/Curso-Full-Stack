@@ -1,4 +1,5 @@
 export class Electrodomestico {
+    
     protected marca: string;
     protected modelo: string;
     protected estaEncendido: boolean;
@@ -10,28 +11,28 @@ export class Electrodomestico {
     }
 
     // Getters
-    public getMarca(): string {
+    public getMarca():string {
         return this.marca;
     }
 
-    public getModelo(): string {
+    public getModelo():string {
         return this.modelo;
     }
 
-    public getEstaEncendido(): boolean {
+    public getEstaEncendido():boolean {
         return this.estaEncendido;
     }
 
     // Setters
-    public setMarca(pMarca: string) {
+    public setMarca(pMarca:string) {
         this.marca = pMarca;
     }
 
-    public setModelo(pModelo: string) {
+    public setModelo(pModelo:string) {
         this.modelo = pModelo;
     }
 
-    public setEstaEncendido(pEstado: boolean) {
+    public setEstaEncendido(pEstado:boolean) {
         this.estaEncendido = pEstado;
     }
 
