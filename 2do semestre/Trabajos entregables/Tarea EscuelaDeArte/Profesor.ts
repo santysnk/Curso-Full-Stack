@@ -1,7 +1,7 @@
 import { Persona } from "./Persona";
 
 export class Profesor extends Persona{
-    private especialidad:string; // para determinar la materia que cubre
+    private especialidad:string; // para determinar la materia que cubre (pintura, costura, cocina, decoracion, etc)
 
     constructor(pNombre:string,pApellido:string,pDNI:number,pEdad:number,pEspecialidad:string) {
         super(pNombre, pApellido, pDNI,pEdad);
