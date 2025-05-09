@@ -2,7 +2,7 @@ import { Animal } from "./ClaseAbs Animal";
 
 export class Gato extends Animal {
     emitirSonido(): void {
-        console.log("¡Miau!");
+        console.log("Miau!");
     }
 
     tipoDeDieta(): void {
