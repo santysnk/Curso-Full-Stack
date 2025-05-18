@@ -10,7 +10,7 @@ export class AnimalFactory {
         switch (tipo.toLowerCase()) {
             case "perro":
                 return new Perro();
-            case "gato":
+            case "gato": 
                 return new Gato();
             case "pajaro":
                 return new Pajaro();

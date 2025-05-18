@@ -1,17 +1,30 @@
+import { log } from 'console';
 import * as fs from 'fs';
 import * as path from 'path';
-import * as rs from 'readline-sync'
 
-let nombreArchivo:string;
+let nombreArchivo : string = "";
+
+nombreArchivo = "pedro.txt"
 
 
-while (true){
-    nombreArchivo = rs.question("ingrese nombre del archivo a crear");
 
-    if (nombreArchivo.trim() === ""){
-        console.log("Saliendo del programa...");
-        break;
+function obtenerNombresQueEmpiezanConR(nombreArchivo: string): string[] {
+    const rutaArchivo = path.join(__dirname, nombreArchivo);
+
+    if (!fs.existsSync(rutaArchivo)) {
+        console.log("El archivo no existe.");
+        return [];
     }
 
-    const 
+    const contenido = fs.readFileSync(rutaArchivo, 'utf-8');
+
+    const nombresFiltrados = contenido
+        .split('\n')
+        .map(Element => Element.trim())
+        .filter(Element => Element.toLowerCase().startsWith('p'));  // Ignora mayúsculas
+
+    return nombresFiltrados;
 }
+
+
+console.log(obtenerNombresQueEmpiezanConR(nombreArchivo))
